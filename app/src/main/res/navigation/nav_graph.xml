@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listBookFragment">
+    <fragment
+        android:id="@+id/listBookFragment"
+        android:name="com.burhanyaprak.myapplication.ListBookFragment"
+        android:label="List"
+        tools:layout="@layout/fragment_list_book" >
+        <action
+            android:id="@+id/action_listBookFragment_to_detailsBookFragment"
+            app:destination="@id/detailsBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsBookFragment"
+        android:name="com.burhanyaprak.myapplication.DetailsBookFragment"
+        android:label="Details"
+        tools:layout="@layout/fragment_details_book" >
+        <action
+            android:id="@+id/action_detailsBookFragment_to_listBookFragment"
+            app:destination="@id/listBookFragment" />
+        <argument
+            android:name="book"
+            app:argType="com.burhanyaprak.myapplication.BookModel" />
+    </fragment>
+</navigation>
